@@ -7,11 +7,11 @@ An end-to-end deepfake detection system supporting both image-level and video-le
 - Video deepfake detection using frame-level CNN + BiLSTM
 - Clean training and evaluation pipeline
 - Separate evaluation scripts for image and video
-- Reproducible experiments via YAML configs
+- Reproducible experiments via YAML configurations
 
 ## Project Structure
+
 Deepfake_detector/
-|'''
 ├── src/
 │ ├── models.py
 │ ├── dataset.py
