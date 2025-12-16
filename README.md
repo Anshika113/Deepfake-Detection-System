@@ -10,20 +10,22 @@ An end-to-end deepfake detection system supporting both image-level and video-le
 - Reproducible experiments via YAML configurations
 
 ## Project Structure
+
+```text
 Deepfake_detector/
 ├── src/
-│ ├── models.py
-│ ├── dataset.py
-│ ├── train_video.py
-│ ├── evaluate_img.py
-│ └── evaluate_vid.py
+│   ├── models.py
+│   ├── dataset.py
+│   ├── train_video.py
+│   ├── evaluate_img.py
+│   └── evaluate_vid.py
 │
 ├── configs/
-│ └── default.yaml
+│   └── default.yaml
 │
 ├── data/
-│ └── processed/
-│ └── metadata.csv
+│   └── processed/
+│       └── metadata.csv
 │
 ├── .gitignore
 └── README.md
