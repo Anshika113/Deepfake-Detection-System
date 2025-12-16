@@ -10,7 +10,6 @@ An end-to-end deepfake detection system supporting both image-level and video-le
 - Reproducible experiments via YAML configurations
 
 ## Project Structure
-
 Deepfake_detector/
 ├── src/
 │ ├── models.py
