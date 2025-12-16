@@ -14,9 +14,7 @@ import yaml
 from dataset import create_dataloaders
 from models import ImageEfficientNet
 
-
 CHECKPOINT_PATH = "models/image_best.pth"
-
 
 def load_config(path="configs/default.yaml"):
     with open(path, "r") as f:
@@ -31,7 +29,6 @@ def load_config(path="configs/default.yaml"):
     }
 
     return cfg, dl_kwargs
-
 
 def main():
     cfg, dl_kwargs = load_config()

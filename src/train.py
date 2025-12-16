@@ -172,14 +172,13 @@ class Trainer:
                 print("Saved new best model:", save_path)
 
         self.writer.close()
-
+        
 # MAIN
 def main():
     config = load_config()
     print("Metadata:", config["metadata_path"])
     trainer = Trainer(config)
     trainer.train()
-
 
 if __name__ == "__main__":
     main()

@@ -4,20 +4,15 @@ import torch.nn as nn
 from tqdm import tqdm
 import yaml
 from sklearn.metrics import roc_auc_score
-
 from dataset import create_dataloaders
 from models import DeepfakeDetector
 
-
-# ===============================
 # CONFIG
-# ===============================
 CONFIG_PATH = "configs/default.yaml"
 SAVE_DIR = "models"
 SAVE_PATH = os.path.join(SAVE_DIR, "best.pth")
 EPOCHS = 5
 LR = 1e-4
-
 
 def load_config(path):
     with open(path, "r") as f:
@@ -32,7 +27,6 @@ def load_config(path):
         "num_workers": int(training.get("num_workers", 4)),
         "aggregator": cfg.get("model", {}).get("aggregator", "lstm"),
     }
-
 
 def main():
     os.makedirs(SAVE_DIR, exist_ok=True)
@@ -111,7 +105,7 @@ def main():
             f"Val Loss={val_loss:.4f} | "
             f"Val AUC={val_auc:.4f}"
         )
-
+        
         # ================= SAVE BEST =================
         if val_auc > best_val_auc:
             best_val_auc = val_auc
@@ -127,7 +121,6 @@ def main():
             print("✅ Saved new BEST model (AUC based)")
 
     print("\n🎯 Training complete. Best Val AUC:", best_val_auc)
-
 
 if __name__ == "__main__":
     main()

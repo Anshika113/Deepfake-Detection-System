@@ -16,7 +16,6 @@ from models import DeepfakeDetector
 
 CHECKPOINT_PATH = "models/best.pth"
 
-
 def load_config(path="configs/default.yaml"):
     with open(path, "r") as f:
         cfg = yaml.safe_load(f)
@@ -31,7 +30,6 @@ def load_config(path="configs/default.yaml"):
     }
 
     return cfg, dl_kwargs
-
 
 def main():
     cfg, dl_kwargs = load_config()
@@ -106,7 +104,6 @@ def main():
 
     print("\nClassification Report:\n")
     print(classification_report(all_labels, preds, digits=4))
-
 
 if __name__ == "__main__":
     main()
