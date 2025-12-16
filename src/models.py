@@ -1,17 +1,11 @@
 import torch
 import torch.nn as nn
 
-# =========================================================
-# IMAGE MODEL (torchvision) — image_best.pth
-# =========================================================
+# IMAGE MODEL
 from torchvision.models import efficientnet_b0, EfficientNet_B0_Weights
 
 
 class ImageEfficientNet(nn.Module):
-    """
-    Image-only deepfake detector
-    Architecture LOCKED
-    """
     def __init__(self):
         super().__init__()
         self.model = efficientnet_b0(
@@ -23,18 +17,11 @@ class ImageEfficientNet(nn.Module):
     def forward(self, x):
         return self.model(x).squeeze(-1)
 
-
-# =========================================================
-# VIDEO MODEL — efficientnet_pytorch (LOCKED)
-# =========================================================
+# VIDEO MODEL
 from efficientnet_pytorch import EfficientNet
 
 
 class FrameBackbone(nn.Module):
-    """
-    Frame-level EfficientNet-B0 backbone
-    Architecture LOCKED
-    """
     def __init__(self, freeze_layers=5):
         super().__init__()
 
@@ -58,10 +45,6 @@ class FrameBackbone(nn.Module):
 
 
 class TemporalAggregator(nn.Module):
-    """
-    Temporal aggregation head (Bi-LSTM / Conv1D)
-    Architecture LOCKED
-    """
     def __init__(self, input_dim, mode="lstm", dropout=0.4):
         super().__init__()
         self.mode = mode
@@ -104,10 +87,6 @@ class TemporalAggregator(nn.Module):
 
 
 class DeepfakeDetector(nn.Module):
-    """
-    Video deepfake detector (CNN + Temporal)
-    Architecture LOCKED
-    """
     def __init__(self, aggregator="lstm"):
         super().__init__()
         self.frame_backbone = FrameBackbone()
