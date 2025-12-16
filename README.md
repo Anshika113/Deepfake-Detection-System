@@ -52,6 +52,7 @@ Deepfake_detector/
 
 ### Image Model
 
+(Image-only model is a baseline and underperforms compared to video model.)
 * **Backbone:** EfficientNet-B0
 * **Input:** Single RGB image `(3 × 224 × 224)`
 * **Output:** Binary deepfake probability
