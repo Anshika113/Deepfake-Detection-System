@@ -11,7 +11,7 @@ An end-to-end deepfake detection system supporting both image-level and video-le
 
 ## Project Structure
 Deepfake_detector/
-|
+|'''
 ├── src/
 │ ├── models.py
 │ ├── dataset.py
