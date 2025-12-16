@@ -1,0 +1,47 @@
+dataset:
+  metadata_path: data/processed/metadata.csv
+  sequence_length: 4
+  frame_size: 128
+  frame_sampling: random
+  train_split: train
+  val_split: val
+  test_split: test
+
+model:
+  model_type: "2d+lstm"
+  backbone: "efficientnet-b0"
+  pretrained_backbone: true
+  aggregator: "lstm"
+  num_classes: 2
+
+training:
+  device: "cpu"
+  epochs: 30
+  batch_size: 8
+  sequence_length: 4
+  frame_size: 128
+  learning_rate: 1e-4     
+  num_workers: 4
+  pin_memory: false
+  use_amp: true
+  gradient_accumulation_steps: 1
+  debug_steps: 0
+  freeze_backbone: true  
+  early_stop_patience: 8
+
+optimizer:
+  name: "adamw"
+  lr: 1e-4
+  weight_decay: 1e-4
+
+logging:
+  save_dir: "models"
+  log_dir: "logs"
+  save_best: true
+  monitor: "val_loss"
+  use_tensorboard: true
+  checkpoint_freq: 1
+
+pos_weight: 1.12
+seed: 42
+deterministic: false
