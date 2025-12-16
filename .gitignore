@@ -18,3 +18,9 @@ venv/
 # OS files
 .DS_Store
 Thumbs.db
+
+# TensorBoard logs
+runs/
+logs/
+events.out.tfevents.*
+
