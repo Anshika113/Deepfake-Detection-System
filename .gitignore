@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Data
+data/
+datasets/
+
+# Model weights
+models/*.pth
+models/*.pt
+
+# Environment
+.venv/
+venv/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
