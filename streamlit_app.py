@@ -1,3 +1,5 @@
+import gdown
+import os
 import sys
 import tempfile
 from pathlib import Path
@@ -9,7 +11,9 @@ import numpy as np
 from PIL import Image
 from torchvision import transforms
 import importlib.util
-
+os.makedirs("models", exist_ok=True)
+if not os.path.exists("models/best.pth"):
+    gdown.download("https://drive.google.com/uc?id=1Nbio8c8j9XCbpM7VMuxl1CKTO2GpkCN6", "models/best.pth", quiet=False)
 # Project setup
 APP_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = APP_DIR.parent
