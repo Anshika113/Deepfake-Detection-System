@@ -14,14 +14,14 @@ import importlib.util
 APP_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = APP_DIR.parent
 sys.path.append(str(PROJECT_ROOT))
-IMAGE_CKPT = "models/image_best.pth"
-VIDEO_CKPT = "models/best.pth"
+IMAGE_CKPT = APP_DIR/"models"/"image_best.pth"
+VIDEO_CKPT = APP_DIR/ "models"/"best.pth"
 SEQ_LEN = 16
 FRAME_SIZE = 224
 
 # Load models dynamically
 def load_models_module():
-    path = PROJECT_ROOT /"src" / "models.py"
+    path = APP_DIR /"src" / "models.py"
     spec = importlib.util.spec_from_file_location("models_dynamic", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
