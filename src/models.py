@@ -25,7 +25,7 @@ class FrameBackbone(nn.Module):
     def __init__(self, freeze_layers=5):
         super().__init__()
 
-        self.model = EfficientNet.from_pretrained("efficientnet-b0")
+        self.model = EfficientNet.from_name("efficientnet-b0")
 
         in_features = self.model._fc.in_features
         self.model._fc = nn.Identity()
