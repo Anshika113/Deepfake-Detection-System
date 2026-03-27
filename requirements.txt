@@ -6,3 +6,4 @@ pillow
 opencv-python-headless
 PyYAML
 efficientnet_pytorch
+gdown
