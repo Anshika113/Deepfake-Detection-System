@@ -21,7 +21,7 @@ FRAME_SIZE = 224
 
 # Load models dynamically
 def load_models_module():
-    path = PROJECT_ROOT / "src" / "models.py"
+    path = PROJECT_ROOT / "models.py"
     spec = importlib.util.spec_from_file_location("models_dynamic", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
